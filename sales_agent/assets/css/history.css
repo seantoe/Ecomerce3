@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@100;200;300;400&display=swap');
+
+
+:root{
+    --dark1: #0000004d;
+    --dark2: #181c20;
+    --dark3: #212529;
+    --dark4: #2d3135;
+    --dark5: #424549;
+    --dark6: #404346;
+    --dark7: #9c9c9c;
+    --dark8: #dae0e7;
+    --dark9: #262a2e;
+    --red1: #902e31;
+
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.container{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto 23rem;
+}
+
+.container header .filterEntries{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+aside{
+    height: 100vh;
+}
+
+aside .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo{
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .toggle .logo img{
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .toggle .close{
+    padding-right: 1rem;
+    display: none;
+}
+
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar:hover{
+    box-shadow: none;
+}
+
+aside .sidebar a{
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar a.active{
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+}
+
+aside .sidebar a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar a.active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a:hover{
+    color: var(--color-primary);
+}
+
+aside .sidebar a:hover span{
+    margin-left: 0.6rem;
+}
+
+/* right section */
+
+
+.right-section{
+    margin-top: 1.4rem;
+}
+
+.right-section .nav{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right-section .nav button{
+    display: none;
+}
+
+.right-section .dark-mode{
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.right-section .dark-mode span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-section .dark-mode span.active{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.right-section .nav .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+.right-section .nav .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* filter top */
+
+.filterEntries .entries{
+    color: var(--color-dark);
+}
+
+.filterEntries .entries select, .filterEntries .filter input{
+    padding: 7px 10px;
+    border: 1px solid var(--dark6);
+    color: var(--color-dark-variant);
+    background-color: var(--color-white);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+.filterEntries .entries select{
+    padding: 5px 10px;
+}
+
+.filterEntries .filter{
+    display: flex;
+    align-items: center;
+}
+
+.filter label{
+    color: var(--color-dark);
+    margin-right: 10px;
+}
+
+
+.filter input:focus{
+    border-color: var(--dark7);
+}
+/* Add member Button */
+
+.container header .addMemberBtn {
+    margin-bottom: 15px;
+}
+
+header .addMemberBtn button, .popup header .closeBtn, .popup footer .submitBtn{
+    padding: 9px 14px;
+    color: var(--color-dark);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: 1px solid var(--color-dark);
+    background-color: var(--color-white);
+    border-radius: 5px;
+}
+
+.addMemberBtn button:hover{
+    background: var(--color-background);
+}
+
+/* table */
+
+main{
+    margin-top: 1.4rem;
+}
+
+table .heading th:hover{
+    background: var(--color-background);
+    transition: 0.3s;
+}
+
+table{
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+}
+
+table:hover{
+    box-shadow: none;
+}
+
+table tr td{
+    border-bottom: 1px solid var(--color-dark);
+}
+
+table tr:hover{
+    cursor: pointer;
+    background: var(--color-background);
+}
+
+table tr th, table tr td{
+    padding:3px 15px;
+    color: var(--color-dark);
+    vertical-align: middle;
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}
+
+table tbody tr:first-child td{
+    border-top: 1px solid var(--color-dark);
+
+}
+
+
+/* Pagination */
+
+footer .pagination{
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+footer .pagination button{
+    width: 40px;
+    padding: 5px 0;
+    color: var(--color-dark-variant);
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: 1px solid var(--color-dark);
+    margin: 0;
+}
+
+.pagination button:first-child{
+    width: 85px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid var(--color-background);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.pagination button:last-child{
+    width: 85px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Light Mode Pagination Button */
+.pagination button.active,
+.pagination button:hover {
+    background: var(--color-primary); /* Light mode highlight color */
+    color: var(--color-white); /* Text color for light mode active button */
+    border-color: var(--color-primary); /* Border color for light mode active button */
+}
+
+/* Dark Mode Pagination Button */
+.dark-mode-variables .pagination button.active,
+.dark-mode-variables .pagination button:hover {
+    background: var(--color-dark); /* Dark mode highlight color */
+    color: var(--color-white); /* Text color for dark mode active button */
+    border-color: var(--color-dark); /* Border color for dark mode active button */
+}
+
+.pagination button.act:first-child{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.pagination button.act:last-child{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+table tr .empty{
+    padding: 6px;
+    background: var(--color-background);
+}
+
+
+
+/* Popup Form */
+
+.dark_bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.popup{
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px rgba(0,0,0,0.3);
+    background: var(--dark6);
+    transition: 0.4s;
+    user-select: none;
+    transform: scale(0.7);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.popup header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--dark7);
+    padding: 10px 20px;
+}
+
+.popup header .closeBtn{
+    font-size: 30px;
+    font-weight: 300;
+    padding: 0 15px;
+}
+
+.popup header .closeBtn:hover, .popup footer .submitBtn:hover{
+    border-color: var(--dark7);
+    transition: 0.3s;
+}
+
+.popup footer{
+    border-top: 1px solid var(--dark7);
+    padding: 12px 20px;
+    text-align: right;
+}
+
+.popup form{
+    padding: 10px 20px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.popup .imgholder{
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 15px;
+}
+
+.popup .imgholder .upload{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(0,0,0,0.3);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    display: none;
+}
+
+.imgholder:hover .upload{
+    display: flex;
+}
+
+.imgholder .upload input{
+    display: none;
+}
+
+.imgholder .upload i{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 300;
+}
+
+.imgholder .img{
+    width: 100%;
+    height: 100%;
+}
+
+form .inputFieldContainer .nameField,
+form .inputFieldContainer .ageCityField,
+form .inputFieldContainer .postSalary{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+form .inputFieldContainer .nameField input,
+form .inputFieldContainer .ageCityField input,
+form .inputFieldContainer .postSalary input{
+    width: 200px;
+}
+
+.inputFieldContainer .form_control{
+    margin: 10px 0;
+}
+
+.inputFieldContainer .form_control label{
+    display: block;
+    color: var(--dark8);
+    margin-bottom: 5px;
+}
+
+.form_control input{
+    padding: 10px;
+    border: 1px solid var(--dark6);
+    color: var(--dark8);
+    background: var(--dark4);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.form_control input:focus,
+.form_control input:valid{
+    border-color: var(--dark7);
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+    display: none;
+}
+
+
+.active{
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+

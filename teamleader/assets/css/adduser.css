@@ -1,0 +1,548 @@
+:root{
+  --color-background: #f6f6f9;
+}
+
+
+/** Font Famaily **/
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Amatic SC', cursive;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+/** Custom Admin Template Design **/
+
+/* Wrapper Design */
+main{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+main>nav,
+main>footer
+{
+  width: 100%;
+  flex-shrink: 1;
+}
+main>div#main-wrapper
+{
+  width: 100%;
+  flex-grow: 1;
+  height: calc(100%);
+  overflow: auto;
+}
+
+body{
+    background-color: var(--color-background);
+}
+
+/* Customizing Top bar Design */
+/* NavBar Brand */
+#navBarBrand-container{
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  min-height: calc(100%);
+}
+#navBarBrand-container .navbar-brand{
+  white-space: break-spaces;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+}
+/*text color*/
+#navBarBrand-container * {
+  color:#202528;
+}
+
+/*Profile Right Top Bar*/
+
+.ct-top-nav-right .profile{
+    display: flex;
+    gap: 1rem;
+    text-align: right;
+}
+
+.ct-top-nav-right .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ct-top-nav-right .profile .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Topbar title and menu container design */
+#navBarMenu-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px 15px 10px;
+}
+#navBarMenu .ct-top-nav-left{
+  width: 60%;
+}
+#navBarMenu .ct-top-nav-right{
+  width: 40%;
+}
+#navBarMenu-container a{
+  white-space: break-spaces;
+}
+button#SideBarToggle {
+  background: transparent;
+  border: unset;
+}
+button#SideBarToggle *{
+  color: #2d2d2d;
+}
+#main-wrapper,
+#navBarMenu-container,
+#navBarBrand-container,
+#footer{
+  transition: width .3s ease-in-out,  margin .3s ease-in-out;
+}
+
+
+/* Sidebar Navigation */
+#sidebarNav {
+  width: 350px;
+  position: fixed;
+  left: 0;
+  min-height: 60vh;
+  background-color: var(--color-background);
+  transition: width 0.3s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#sidebarNav .nav-menu{
+  width: calc(100%);
+  overflow: auto;
+  padding: 0;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+#sidebarNav .nav-menu .nav-item {
+    min-height: 55px;
+    display: flex;
+    list-style: none;
+    padding: 0 15px;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 2rem;
+    gap: 1rem;
+
+}
+#sidebarNav .nav-menu .nav-item:hover {
+  margin-left: 0.6rem;
+  border-bottom: 1px solid #505050;
+}
+
+#sidebarNav .nav-menu .nav-item.active {
+  background: #fff;
+}
+
+#sidebarNav .nav-menu .nav-item:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+
+}
+#sidebarNav .nav-menu .nav-item>.nav-icon {
+    flex-shrink: 1;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+#sidebarNav .nav-menu .nav-item>.nav-link {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ededed;
+}
+#sidebarNav .nav-menu .nav-item>.nav-link,
+#sidebarNav .nav-menu .nav-item>.nav-icon
+{
+  color: #000;
+}
+#sidebarNav .nav-menu .nav-item.active * {
+  color: #363636;
+}
+
+
+/* Customize Admin Template in Tablets, mobile, and smaller screens */
+@media (max-width:768px){
+  #TopNav{
+    display: flex;
+    height: auto;
+  }
+  #navBarBrand-container,
+  #navBarMenu-container,
+  #footer
+  {
+    width: 100% !important;
+  }
+  #navBarBrand-container{
+    min-height: unset;
+  }
+  #sidebarNav{
+    z-index: 99;
+    box-shadow: 0px 2px 5px #000;
+  }
+  #sidebarNav .nav-menu .nav-item.active {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    background: #fff;
+  }
+}
+
+@media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+
+.gradient-custom-2 {
+/* fallback for old browsers */
+background: #a1c4fd;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1));
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, rgba(161, 196, 253, 1), rgba(194, 233, 251, 1))
+}
+
+.bg-indigo {
+background-color: #4835d4;
+}
+@media (min-width: 992px) {
+.card-registration-2 .bg-indigo {
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+}
+@media (max-width: 991px) {
+.card-registration-2 .bg-indigo {
+border-bottom-left-radius: 15px;
+border-bottom-right-radius: 15px;
+}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --color-background: #f6f6f9;
+  --bs-light: #f8f9fa;
+   --bs-primary: #0d6efd;
+   --bs-indigo: #6610f2;
+   --bs-danger: #dc3545;
+   --bs-success: #198754;
+}
+
+
+/** Font Famaily **/
+h1, h2, h3, h5, h6{
+  font-family: 'Amatic SC', cursive;
+}
+h4{
+  font-family: 'Poppins', sans-serif;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+/** Custom Admin Template Design **/
+
+/* Wrapper Design */
+main{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+main>nav,
+main>footer
+{
+  width: 100%;
+  flex-shrink: 1;
+}
+main>div#main-wrapper
+{
+  width: 100%;
+  flex-grow: 1;
+  height: calc(100%);
+  overflow: auto;
+}
+
+body{
+    background-color: var(--color-background);
+}
+
+/* Customizing Top bar Design */
+/* NavBar Brand */
+#navBarBrand-container{
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  padding: 0 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background);
+  min-height: calc(100%);
+}
+#navBarBrand-container .navbar-brand{
+  white-space: break-spaces;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+}
+/*text color*/
+#navBarBrand-container * {
+  color:#202528;
+}
+
+/*Profile Right Top Bar*/
+
+.ct-top-nav-right .profile{
+    display: flex;
+    gap: 1rem;
+    text-align: right;
+}
+
+.ct-top-nav-right .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ct-top-nav-right .profile .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Topbar title and menu container design */
+#navBarMenu-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px 15px 10px;
+}
+#navBarMenu .ct-top-nav-left{
+  width: 60%;
+}
+#navBarMenu .ct-top-nav-right{
+  width: 40%;
+}
+#navBarMenu-container a{
+  white-space: break-spaces;
+}
+button#SideBarToggle {
+  background: transparent;
+  border: unset;
+}
+button#SideBarToggle *{
+  color: #2d2d2d;
+}
+#main-wrapper,
+#navBarMenu-container,
+#navBarBrand-container,
+#footer{
+  transition: width .3s ease-in-out,  margin .3s ease-in-out;
+}
+
+.row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* Sidebar Navigation */
+#sidebarNav {
+  width: 270px;
+  position: fixed;
+  left: 0;
+  min-height: 60vh;
+  background-color: var(--color-background);
+  transition: width 0.3s ease-in-out;
+  opacity: 0;
+  overflow: hidden;
+}
+
+#sidebarNav .nav-menu{
+  width: calc(100%);
+  overflow: auto;
+  padding: 0;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+#sidebarNav .nav-menu .nav-item {
+    min-height: 55px;
+    display: flex;
+    list-style: none;
+    padding: 0 15px;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 2rem;
+    gap: 1rem;
+
+}
+#sidebarNav .nav-menu .nav-item:hover {
+  margin-left: 0.6rem;
+  border-bottom: 1px solid #505050;
+}
+
+#sidebarNav .nav-menu .nav-item.active {
+  background: #fff;
+}
+
+#sidebarNav .nav-menu .nav-item:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+
+}
+#sidebarNav .nav-menu .nav-item>.nav-icon {
+    flex-shrink: 1;
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+}
+#sidebarNav .nav-menu .nav-item>.nav-link {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ededed;
+}
+#sidebarNav .nav-menu .nav-item>.nav-link,
+#sidebarNav .nav-menu .nav-item>.nav-icon
+{
+  color: #000;
+}
+#sidebarNav .nav-menu .nav-item.active * {
+  color: #363636;
+}
+/* start: Suummary */
+.summary-icon {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bs-light);
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+.summary-primary,
+.summary-indigo,
+.summary-success,
+.summary-danger {
+    transition: .2s;
+}
+.summary-primary:hover,
+.summary-indigo:hover,
+.summary-success:hover,
+.summary-danger:hover {
+    color: var(--bs-light) !important;
+}
+.summary-primary:hover .summary-icon,
+.summary-indigo:hover .summary-icon,
+.summary-success:hover .summary-icon,
+.summary-danger:hover .summary-icon {
+    background-color: var(--bs-light) !important;
+}
+.summary-primary:hover .summary-icon {
+    color: var(--bs-primary) !important;
+}
+.summary-indigo:hover .summary-icon {
+    color: var(--bs-indigo) !important;
+}
+.summary-success:hover .summary-icon {
+    color: var(--bs-success) !important;
+}
+.summary-danger:hover .summary-icon {
+    color: var(--bs-danger) !important;
+}
+.summary-primary:hover {
+    background-color: var(--bs-primary) !important;
+}
+.summary-indigo:hover {
+    background-color: var(--bs-indigo) !important;
+}
+.summary-success:hover {
+    background-color: var(--bs-success) !important;
+}
+.summary-danger:hover {
+    background-color: var(--bs-danger) !important;
+}
+/* end: Suummary */
+
+
+/* Customize Admin Template in Tablets, mobile, and smaller screens */
+@media (max-width:768px){
+  #TopNav{
+    display: flex;
+    height: auto;
+  }
+  #navBarBrand-container,
+  #navBarMenu-container,
+  #footer
+  {
+    width: 100% !important;
+  }
+  #navBarBrand-container{
+    min-height: unset;
+  }
+  #sidebarNav{
+    z-index: 99;
+    box-shadow: 0px 2px 5px #000;
+  }
+  #sidebarNav .nav-menu .nav-item.active {
+    border-top-left-radius: unset;
+    border-bottom-left-radius: unset;
+    background: #fff;
+  }
+}
+@media (max-width:350px){
+  #sidebarNav{
+    width: 100%;
+  }
+}

@@ -1,0 +1,79 @@
+.header{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: radial-gradient(#fff,#ffd6d6);
+}
+
+/*top navbar start*/
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display:  inline-block;
+    margin-right: 20px;
+}
+
+.material-symbols-outlined {
+    color: black;    
+    margin-left: 10px; /* Move it a bit to the right */    
+}
+
+.navbar ul li a {
+    text-decoration: none; /* Remove underline */           
+    color: black; /* Change text color to black */
+    font-family: 'Poppins', sans-serif; /* Change font */
+    font-size: 16px; /* Adjust font size */
+}
+
+.navbar ul li a:hover {
+    color: #ff3366; /* Change text color on hover */
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.col-2{
+  flex-basis: 50%;
+  min-width: 300px;
+}
+/*edit image*/
+.col-2 img{
+  max-width: 450px;
+  padding: 50px 0;
+
+}
+/*edit title text*/
+.col-2 h1{
+  font-size: 50px;
+  line-height: 60px;
+  margin: 25px 0;
+}
+
+ .card:hover {
+    transform: translateY(-10px);
+    transition: transform 0.5s ease;
+  }
+
+  .card-img-top {
+    max-width: 100%; /* Set the maximum width to 100% */
+    height: auto; /* Maintain the aspect ratio */
+    max-height: 400px; /* Set the maximum height (adjust as needed) */
+
+}
+
+.no-underline {
+    text-decoration: none;
+}
